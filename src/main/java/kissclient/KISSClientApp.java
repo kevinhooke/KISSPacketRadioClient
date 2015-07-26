@@ -5,6 +5,13 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+/**
+ * Socket based client to a KISS TNC. KISS frames interpreted per KISS spec
+ * at http://www.ax25.net/kiss.aspx
+ * 
+ * @author kevin.hooke@gmail.com
+ *
+ */
 public class KISSClientApp {
 
 	public static void main(String[] args) {
@@ -41,9 +48,6 @@ public class KISSClientApp {
 				System.arraycopy(chars, 9, source, 0, 7);
 				System.out.print(" Source:" + this.decodeAX25Callsign(source) + " ");
 				
-				//
-				//TODO - in progress
-				//
 				int currentPos = 2 + 7 + 7;
 				int callsignLength = 7;
 				int callsignsInRepeaterList = 0;
