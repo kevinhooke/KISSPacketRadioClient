@@ -7,7 +7,7 @@ import org.junit.Test;
 public class KISSClientAppTest {
 
 	private KISSClientApp app = new KISSClientApp();
-
+	
 	@Test
 	public void test_SP(){
 		String result = this.app.identifyChar((byte)0x20);
