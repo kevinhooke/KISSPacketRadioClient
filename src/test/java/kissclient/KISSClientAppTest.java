@@ -10,21 +10,22 @@ public class KISSClientAppTest {
 	
 	@Test
 	public void test_SP(){
-		String result = this.app.identifyChar((byte)0x20);
+		KISSControlCode result = this.app.identifyChar((byte)0x20);
 		System.out.println(result);
+		
 		assertTrue(result.equals(" "));
 	}
 	
 	@Test
 	public void test_A(){
-		String result = this.app.identifyChar((byte)0x41);
+		KISSControlCode result = this.app.identifyChar((byte)0x41);
 		System.out.println(result);
-		assertTrue(result.equals("A"));
+		assertTrue(result.equals(KISSControlCode.PRINTABLE));
 	}
 
 	@Test
 	public void test_Z(){
-		String result = this.app.identifyChar((byte)0x5A);
+		KISSControlCode result = this.app.identifyChar((byte)0x5A);
 		System.out.println(result);
 		assertTrue(result.equals("Z"));
 	}
