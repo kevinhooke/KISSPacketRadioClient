@@ -74,6 +74,7 @@ public class KISSClientApp {
 					if( this.identifyChar(chars[i]) == KISSControlCode.PRINTABLE){
 						System.out.print(this.convertHexCodeToPrintableString(chars[i]));
 					}
+					//else if(){ } // TODO: else if known control code
 					else{
 						System.out.print(" " + String.format("%02X", chars[i]) + "[?]");	
 					}
@@ -122,6 +123,8 @@ public class KISSClientApp {
 
 			sb.append(new String(Character.toChars(shifted)));
 		}
+		
+		//TODO: byte 7 containing SSID currently not handled (just appended to String)
 		
 		return sb.toString();
 	}
